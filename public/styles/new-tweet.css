@@ -1,0 +1,28 @@
+
+/* Form input area */
+ .new-tweet {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin-top: 1rem;
+} 
+
+/* Form buttons */
+.button-count {
+  display: flex;
+  justify-content: space-between;
+  border-top: solid;
+  padding-top: 15px;
+  font-family: "Bungee", sans-serif; 
+}
+.tweet-button {
+  background-color: #4056A1;
+  color: white;
+}  
+
+.celebration {
+  background-color: lightsalmon;
+  color: papayawhip;
+  border: 3px dashed goldenrod;
+}
