@@ -21,6 +21,9 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+p{
+  font-size: 1.3rem;
+}
 /*
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
@@ -28,3 +31,42 @@ main {
  /* width: 90%; */
  background-color: #f4f1ec;
  }
+
+article {
+  border: solid grey 3px;
+  margin: 1.5rem;
+  padding: 1rem;
+}
+article:hover {
+  box-shadow: 0 11px 11px rgba(33,33,33,.2); 
+}
+article header {
+ display: flex; 
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+  
+}
+article header div{
+ display: flex;
+ align-items: center;
+ font-size: 1.2rem;
+}
+article header p{
+ font-weight: 600;
+ color: #66cdaa ;
+ opacity: 60%;
+}
+article footer {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  border-top: solid;
+  padding-top: 20px;
+}
+article i:hover {
+  color: #66cdaa;
+}

@@ -16,7 +16,7 @@ $(document).ready(function () {
     //select what to count
     const usersInput = event.target.value
     console.log("usersInput", usersInput);
-    
+
     //grab number of characters in existing input
     const num = usersInput.length;
     console.log("num", num);
@@ -36,12 +36,11 @@ $(document).ready(function () {
     if (reminder < 0) {
       $showReminder.addClass("celebration");
     }
-
-    //take the color off few sec later
-    setTimeout(() => {
+    else {
       $showReminder.removeClass("celebration");
-    }, 10000);
 
+    }
+    
   });
 
 });
