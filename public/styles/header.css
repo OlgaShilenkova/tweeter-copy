@@ -1,14 +1,21 @@
-.head-in-header {
-  height: 400px;
-  display: flex;
+.header {
   background-color: #66cdaa;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 0;
-  margin-top: 120px;
+  padding-top: 6em;  
 }
-.name-in-header{
-  margin-top: 0px;
+.header-avatar {
+  max-width: 250px;
+}
+.header-avatar img{
+  width: 100%;
+}
+
+.header-username{
+  margin: 1em 0;
+  color:white;
+  font-size: 1.8em;
 }

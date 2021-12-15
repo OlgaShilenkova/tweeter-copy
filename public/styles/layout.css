@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -18,55 +20,61 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-p{
-  font-size: 1.3rem;
-}
 /*
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
-main {
- /* width: 90%; */
- background-color: #f4f1ec;
- }
+main.container {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #f4f1ec;
+}
 
-article {
-  border: solid grey 3px;
-  margin: 1.5rem;
-  padding: 1rem;
+.tweet {
+  border: solid 3px #545149;
+  margin: 1em;
+  padding: 1em;
 }
-article:hover {
-  box-shadow: 0 11px 11px rgba(33,33,33,.2); 
+
+.tweet:hover {
+  box-shadow: 5px 5px 5px #4056A1;
 }
-article header {
- display: flex; 
- flex-direction: row;
- justify-content: space-between;
- align-items: center;
-  
+
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1em;
 }
-article header div{
- display: flex;
- align-items: center;
- font-size: 1.2rem;
+
+.tweet-header-avatar {
+  display: flex;
+  align-items: center;
 }
-article header p{
- font-weight: 600;
- color: #66cdaa ;
- opacity: 60%;
+
+.tweet-header-handle {
+  font-weight: 600;
+  color: #66cdaa;
+  opacity: 60%;
 }
-article footer {
+
+.tweet-content {
+  text-align: center;
+}
+
+.tweet-footer {
   display: flex;
   flex-direction: row;
   align-content: space-between;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.8rem;
+  font-size: 0.8em;
   border-top: solid;
   padding-top: 20px;
 }
-article i:hover {
+
+.tweet-footer-icons i:hover {
   color: #66cdaa;
 }

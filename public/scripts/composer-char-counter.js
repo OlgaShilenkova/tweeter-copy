@@ -26,7 +26,7 @@ $(document).ready(function () {
     const reminder = maxLength - num;
 
     //select counter
-    const $charCounter = $(".counter");
+    const $charCounter = $(".new-tweet-counter");
 
     //creat text node on it
     const $showReminder = $charCounter.text(reminder);
@@ -34,10 +34,10 @@ $(document).ready(function () {
 
     //change color if tweet pass max num of char
     if (reminder < 0) {
-      $showReminder.addClass("celebration");
+      $showReminder.addClass("max-reached");
     }
     else {
-      $showReminder.removeClass("celebration");
+      $showReminder.removeClass("max-reached");
 
     }
     
