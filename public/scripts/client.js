@@ -107,7 +107,7 @@ $(document).ready(function () {
   });
 
   //
-  //adding newly created tweet
+  //add newly created tweet
   //
 
   //select the button
@@ -130,9 +130,9 @@ $(document).ready(function () {
         //make get request on particular url adress to bring JSON data from there
         $.get(url, function (data) {
           console.log("data from AJAX", data);
-          //remove the last element from array that we receved from data on and return it as an Array
+          //remove the last element from array that we receved from data and return it as an Array
           const newTweet = [data.slice(-1).pop()];
-          //create new section
+          //create new section with new tweet
           renderTweets(newTweet);
         });
       },
