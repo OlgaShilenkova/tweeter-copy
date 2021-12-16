@@ -68,20 +68,41 @@ $(document).ready(function () {
     },
   ];
 
-  const renderTweets = function (data) {
+  //to perform request and deal with result
+  const loadTweets = function () {
+    const url = "http://localhost:8080/tweets";
+
+    //sending AJAX request
+    $.ajax({
+      url: url,
+      method: "GET",
+    })
+      //if no error see this
+      .done((results) => {
+        console.log(results);
+        renderTweets(results);
+      })
+      .fail((error) => console.log(`Error:${error.message}`))
+      .always(() => console.log(`Request to ${url} done`));
+  };
+
+  //fetching tweets from array of objects
+  const renderTweets = function (tweets) {
     // loops through array of data/tweets
-    for (let tweet of data){
-      console.log("tweet",tweet)
+    for (let tweet of tweets) {
+      // console.log("tweet", tweet);
+
       // calls createTweetElement for each tweet
-     let $singleTweet = createTweetElement(tweet);
-     // takes return value and appends it to the tweets container
-     $(".tweets-container").append($singleTweet)
+      let $singleTweet = createTweetElement(tweet);
+
+      // takes return value and appends it to the tweets container
+      $(".tweets-container").append($singleTweet);
     }
   };
 
+  //creating single tweet based on data array that we have above
   const createTweetElement = function (tweet) {
-    //creating single tweet based on data array that we have above
-   let $tweet = `
+    let $tweet = `
     <article class="tweet">
       <header class="tweet-header">
         <div class="tweet-header-avatar">
@@ -92,7 +113,9 @@ $(document).ready(function () {
       </header>
       <p class="tweet-content"> ${tweet.content.text}</p>
       <footer class="tweet-footer">
-        <span class="tweet-footer-timestamp">${timeago.format(tweet.created_at)}</span>
+        <span class="tweet-footer-timestamp">${timeago.format(
+          tweet.created_at
+        )}</span>
         <div class="tweet-footer-icons">
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>
@@ -104,4 +127,41 @@ $(document).ready(function () {
   };
 
   renderTweets(data);
+
+  //
+  //Form Submittion using JQuery
+  //
+  //catch the form submit
+  $(".new-tweet-form").on("submit", function (event) {
+    //prevent form from submittion and reloading the page
+    event.preventDefault();
+    console.log("form submit");
+
+    //select textarea
+    const $textAreaInput = $("#tweet-text");
+
+    //catch input from textarea
+    const $inputData = $textAreaInput.val();
+    console.log("input =>", $inputData);
+
+    //make Ajax request
+    loadTweets($inputData);
+  });
+  
+  /*I did not understand part about POST request to server with serialize data 
+    const content = $(this).serialize();
+
+    console.log( $(this).serialize());
+
+    $.ajax({
+      url:`http://localhost:8080`,
+      method: 'POST',
+      data: content,
+    })
+      .done((result) => {
+        console.log(result);
+      })
+      .fail((err) => console.log(err));
+   });
+    */
 });
