@@ -5,6 +5,16 @@
  */
 
 //
+//create safe Html
+//
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+// const safeHTML = `<p>${escape(textFromUser)}</p>`; //example of usage
+
+//
 // fetch tweets from localhost
 //
 const loadTweets = function () {
@@ -28,8 +38,6 @@ const loadTweets = function () {
 const renderTweets = function (tweets) {
   // loops through array of data/tweets
   for (let tweet of tweets) {
-    // console.log("tweet", tweet);
-
     // create single tweet element for each tweet
     let $singleTweet = createTweetElement(tweet);
 
@@ -51,7 +59,7 @@ const createTweetElement = function (tweet) {
   </div>
   <p class="tweet-header-handle">${tweet.user.handle}</p>
   </header>
-  <p class="tweet-content"> ${tweet.content.text}</p>
+  <p class="tweet-content"> ${escape(tweet.content.text)}</p>
   <footer class="tweet-footer">
   <span class="tweet-footer-timestamp">${timeago.format(
     tweet.created_at
