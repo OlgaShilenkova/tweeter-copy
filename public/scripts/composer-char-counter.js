@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  console.log("I am ready!");
+  console.log("Composer-char-counter : I am ready!");
 
   //
   //COUNT INSERTED CHARACTERS
