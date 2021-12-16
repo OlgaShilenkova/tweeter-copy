@@ -73,7 +73,7 @@ $(document).ready(function () {
   console.log("Client.js : I am ready!");
 
   //
-  //Form Submittion using JQuery
+  //submit form using JQuery
   //
   //catch the form submit
   $(".new-tweet-form").on("submit", function (event) {
