@@ -81,7 +81,7 @@ $(document).ready(function () {
   console.log("Client.js : I am ready!");
 
   //
-  //error messages
+  //error messages close
   //
 
   //
@@ -93,6 +93,7 @@ $(document).ready(function () {
     event.preventDefault();
 
     //select textarea
+
     const $textAreaInput = $("#tweet-text");
 
     //catch input from textarea
@@ -102,46 +103,20 @@ $(document).ready(function () {
     //validate form's input
 
     if ($inputData.length === 0) {
-      $("#new-tweet-errors")
+      return $("#new-tweet-errors")
         .text("Are you sure that you wrote somethig? Your tweet is empty.")
-        .show()
-        .slideUp(8000);
-    }
-
-    if ($inputData === " ") { // does not work!!
-      $("#new-tweet-errors")
-        .text("Ups! Your tweet is empty.")
-        .show()
-        .slideUp(8000);
+        .slideDown();
     }
 
     if ($inputData.length > 140) {
-      $("#new-tweet-errors")
+      return $("#new-tweet-errors")
         .text("You tweet is tooo loooong.")
-        .show()
-        .slideUp(8000);
+        .slideDown();
     }
 
-    //close/hide error message-> DOES NOT WORK
-    // $(".new-tweet-form").on("click", function () {
-    //   console.log("On click was called");
-    //   $("#new-tweet-errors").hide();
-    // });
-    //make Ajax request
-    loadTweets();
-  });
+    $("#new-tweet-errors").slideUp();
 
-  //
-  //add newly created tweet
-  //
-
-  //select the button
-  const $button = $(".new-tweet-button");
-
-  //set event handler
-  $button.on("click", function () {
-    //select where to take input from
-    const $userInput = $("#tweet-text");
+    const $userInput = $(this);
 
     const url = "http://localhost:8080/tweets";
 
@@ -152,18 +127,38 @@ $(document).ready(function () {
       data: $userInput.serialize(), //set format of user's input into a query string
       type: "application/json",
       success: function () {
+        $textAreaInput.val("");
+        $(".tweets-container").empty();
+        //make Ajax request
+        loadTweets();
+
         //make get request on particular url adress to bring JSON data from there
-        $.get(url, function (data) {
-          console.log("data from AJAX", data);
-          //remove the last element from array that we receved from data and return it as an Array
-          const newTweet = [data.slice(-1).pop()];
-          //create new section with new tweet
-          renderTweets(newTweet);
-        });
+        // $.get(url, function (data) {
+        //   console.log("data from AJAX", data);
+        //   //remove the last element from array that we receved from data and return it as an Array
+        //   const newTweet = [data.slice(-1).pop()];
+        //   //create new section with new tweet
+        // renderTweets(newTweet);
+        // });
       },
     });
   });
+  //make Ajax request
+  loadTweets();
 });
+
+//
+//add newly created tweet
+//
+
+//select the button
+// const $button = $(".new-tweet-button");
+
+//set event handler
+//   $button.on("click", function () {
+//     //select where to take input from
+
+// });
 
 //POST request to server with serialize data
 
