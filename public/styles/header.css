@@ -5,17 +5,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 6em;  
+  padding-top: 15px;
+  margin-top: 120px;
 }
 .header-avatar {
   max-width: 250px;
 }
-.header-avatar img{
+.header-avatar img {
   width: 100%;
 }
 
-.header-username{
+.header-username {
   margin: 1em 0;
-  color:white;
-  font-size: 1.8em;
+  color: white;
+  height: 90px;
+  font-size: 100%;
+  /* font-size: 1.8em; */
 }

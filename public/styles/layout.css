@@ -23,12 +23,13 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
-/*
+/*;
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
+
 main.container {
   width: 90%;
-  margin: 0 auto;
+  margin: auto;
   background-color: #f4f1ec;
 }
 
@@ -39,7 +40,7 @@ main.container {
 }
 
 .tweet:hover {
-  box-shadow: 5px 5px 5px #4056A1;
+  box-shadow: 5px 5px 5px #4056a1;
 }
 
 .tweet-header {
@@ -62,6 +63,7 @@ main.container {
 
 .tweet-content {
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .tweet-footer {
@@ -77,4 +79,43 @@ main.container {
 
 .tweet-footer-icons i:hover {
   color: #66cdaa;
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) {
+  .media {
+    display: flex;
+    flex-direction: row;
+    margin-top: 200px;
+  }
+  .header {
+    width: 45%;
+    margin-left: 50px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    height: 350px;
+  }
+
+  .header-avatar {
+    width: 40%;
+    min-width: 200px;
+  }
+
+  .header-username {
+    font-size: 1em;
+  }
+
+  .container {
+    width: 75%;
+    margin-left: 20px;
+  }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .main {
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
