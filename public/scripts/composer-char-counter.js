@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   //
   //COUNT INSERTED CHARACTERS
   //
@@ -7,12 +7,12 @@ $(document).ready(function () {
   const $textArea = $("#tweet-text");
   // console.log($textArea);
 
-  //setup event handler on input 
-  $textArea.on("input", function (event) {
+  //setup event handler on input
+  $textArea.on("input", function(event) {
     // console.log("You input on textArea.");
 
     //select what to count
-    const usersInput = event.target.value
+    const usersInput = event.target.value;
     // console.log("usersInput", usersInput);
 
     //grab number of characters in existing input
@@ -33,8 +33,7 @@ $(document).ready(function () {
     //change color if tweet pass max num of char
     if (reminder < 0) {
       $showReminder.addClass("max-reached");
-    }
-    else {
+    } else {
       $showReminder.removeClass("max-reached");
 
     }

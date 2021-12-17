@@ -25,7 +25,6 @@ const loadTweets = function() {
     method: "GET",
     dataType: "json", // define type of data that you are going to receive
     success: function (data) {
-      // console.log("data from AJAX get request: ", data);
       renderTweets(data);
     },
   });
@@ -34,7 +33,7 @@ const loadTweets = function() {
 //
 //fetch tweets from array of objects
 //
-const renderTweets = function (tweets) {
+const renderTweets = function(tweets) {
   // loops through array of data/tweets
   for (let tweet of tweets) {
     // create single tweet element for each tweet
@@ -48,7 +47,7 @@ const renderTweets = function (tweets) {
 //
 //create single tweet based on data array that we have above
 //
-const createTweetElement = function (tweet) {
+const createTweetElement = function(tweet) {
   let $tweet = `
   <article class="tweet">
   <header class="tweet-header">
@@ -76,7 +75,7 @@ const createTweetElement = function (tweet) {
 //
 // renderTweets(data);
 //
-$(document).ready(function () {
+$(document).ready(function() {
   console.log("Client.js : I am ready!");
 
   //
@@ -84,7 +83,7 @@ $(document).ready(function () {
   //
 
   //catch the form submit
-  $(".new-tweet-form").on("submit", function (event) {
+  $(".new-tweet-form").on("submit", function(event) {
     //prevent form from submittion and refreshing the page
     event.preventDefault();
 
@@ -107,12 +106,11 @@ $(document).ready(function () {
         .slideDown();
     }
 
-    //close error messages 
+    //close error messages
     $("#new-tweet-errors").slideUp();
 
     //select where to take input from
     const $userInput = $(this);
-    console.log("this", this );
 
     const url = "http://localhost:8080/tweets";
 
@@ -122,8 +120,8 @@ $(document).ready(function () {
       method: "POST",
       data: $userInput.serialize(), //set format of user's input into a query string
       type: "application/json",
-      success: function () {
-        //clean input area 
+      success: function() {
+        //clean input area
         $textAreaInput.val("");
         //clean container from previous tweets, bcs we render them later in loadTweets
         $(".tweets-container").empty();
