@@ -81,6 +81,10 @@ $(document).ready(function () {
   console.log("Client.js : I am ready!");
 
   //
+  //error messages
+  //
+
+  //
   //submit form using JQuery
   //
   //catch the form submit
@@ -96,20 +100,33 @@ $(document).ready(function () {
     console.log("input =>", $inputData);
 
     //validate form's input
+
     if ($inputData.length === 0) {
-      return alert(
-        "Are you sure that you wrote somethig? Your tweet is empty."
-      );
+      $("#new-tweet-errors")
+        .text("Are you sure that you wrote somethig? Your tweet is empty.")
+        .show()
+        .slideUp(8000);
     }
 
-    if ($inputData === null) {
-      return alert("Ups! Your tweet is empty.");
+    if ($inputData === " ") { // does not work!!
+      $("#new-tweet-errors")
+        .text("Ups! Your tweet is empty.")
+        .show()
+        .slideUp(8000);
     }
 
     if ($inputData.length > 140) {
-      return alert("You tweet is tooo loooong.");
+      $("#new-tweet-errors")
+        .text("You tweet is tooo loooong.")
+        .show()
+        .slideUp(8000);
     }
 
+    //close/hide error message-> DOES NOT WORK
+    // $(".new-tweet-form").on("click", function () {
+    //   console.log("On click was called");
+    //   $("#new-tweet-errors").hide();
+    // });
     //make Ajax request
     loadTweets();
   });
