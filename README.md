@@ -16,3 +16,10 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshot of tweets"]("https://github.com/OlgaShilenkova/tweeter-copy/blob/master/docs/tweet-box.png?raw=true")
+
+!["Screenshot of starting page"]("https://github.com/OlgaShilenkova/tweeter-copy/blob/master/docs/starting-page.png?raw=true")
+
