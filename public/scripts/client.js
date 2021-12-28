@@ -7,7 +7,7 @@
 //
 //create safe Html
 //
-const escape = function(str) {
+const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -16,7 +16,7 @@ const escape = function(str) {
 //
 // fetch tweets from localhost
 //
-const loadTweets = function() {
+const loadTweets = function () {
   const url = "http://localhost:8080/tweets";
 
   //send AJAX request
@@ -33,7 +33,7 @@ const loadTweets = function() {
 //
 //fetch tweets from array of objects
 //
-const renderTweets = function(tweets) {
+const renderTweets = function (tweets) {
   // loops through array of data/tweets
   for (let tweet of tweets) {
     // create single tweet element for each tweet
@@ -47,7 +47,7 @@ const renderTweets = function(tweets) {
 //
 //create single tweet based on data array that we have above
 //
-const createTweetElement = function(tweet) {
+const createTweetElement = function (tweet) {
   let $tweet = `
   <article class="tweet">
   <header class="tweet-header">
@@ -75,7 +75,7 @@ const createTweetElement = function(tweet) {
 //
 // renderTweets(data);
 //
-$(document).ready(function() {
+$(document).ready(function () {
   console.log("Client.js : I am ready!");
 
   //
@@ -83,7 +83,7 @@ $(document).ready(function() {
   //
 
   //catch the form submit
-  $(".new-tweet-form").on("submit", function(event) {
+  $(".new-tweet-form").on("submit", function (event) {
     //prevent form from submittion and refreshing the page
     event.preventDefault();
 
@@ -94,20 +94,17 @@ $(document).ready(function() {
     const $inputData = $textAreaInput.val();
 
     //validate form's input
-    if ($inputData.length === 0) {
+    if (!$inputData.length) {
       return $("#new-tweet-errors")
         .text("Are you sure that you wrote somethig? Your tweet is empty.")
-        .slideDown();
+        .slideDown().delay( 2000 ).slideUp(); //show error message, then pauses for 2 sec, then close
     }
 
     if ($inputData.length > 140) {
       return $("#new-tweet-errors")
         .text("You tweet is tooo loooong.")
-        .slideDown();
+        .slideDown().delay( 2000 ).slideUp();
     }
-
-    //close error messages
-    $("#new-tweet-errors").slideUp();
 
     //select where to take input from
     const $userInput = $(this);
@@ -120,9 +117,13 @@ $(document).ready(function() {
       method: "POST",
       data: $userInput.serialize(), //set format of user's input into a query string
       type: "application/json",
-      success: function() {
+      success: function () {
         //clean input area
         $textAreaInput.val("");
+        //select counter
+        let $charCounter = $(".new-tweet-counter");
+        //reset counter back to 140 after submitting a new tweet
+        $charCounter.val("140");
         //clean container from previous tweets, bcs we render them later in loadTweets
         $(".tweets-container").empty();
         //make Ajax request to database
@@ -133,4 +134,3 @@ $(document).ready(function() {
   //make Ajax request
   loadTweets();
 });
-
