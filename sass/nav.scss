@@ -2,6 +2,7 @@
   width: 100%;
   height: 120px;
   background-color: yellowgreen;
+  // #4056a1;
   color: #ffffff;
   padding-left: 1.5em;
   padding-right: 1.5em;
@@ -11,17 +12,14 @@
   position: fixed;
   top: 0;
 }
-
 .navbar-top-logo {
   font-family: "Bungee", cursive;
 }
-
 .navbar-top-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .navbar-top-menu i {
   color: #ba3939;
   margin-top: -25px;

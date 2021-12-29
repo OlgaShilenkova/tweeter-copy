@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
@@ -16,6 +15,7 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -26,6 +26,7 @@ body {
 /*;
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
+
 main.container {
   width: 90%;
   margin: auto;
@@ -87,7 +88,6 @@ main.container {
     flex-direction: row;
     margin-top: 200px;
   }
-
   .header {
     width: 45%;
     margin-left: 50px;
@@ -110,6 +110,7 @@ main.container {
     margin-left: 20px;
   }
 }
+
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
   .main {
