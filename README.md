@@ -16,7 +16,7 @@ Long tweet error message.
 !["Long tweet error"](https://github.com/OlgaShilenkova/tweeter-copy/blob/master/docs/long-tweet.png?raw=true)
 
 Empty tweet error message.
-!["Empty tweet error"](https://github.com/OlgaShilenkova/tweeter-copy/blob/master/docs/empty-tweet.png?raw=true))
+!["Empty tweet error"](https://github.com/OlgaShilenkova/tweeter-copy/blob/master/docs/empty-tweet.png?raw=true)
 
 ## Getting Started
 
