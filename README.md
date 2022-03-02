@@ -1,25 +1,22 @@
 # Tweeter Project
 
-Here is my version of Tweeter as a simple, single-page Twitter clone.
+Here is my version of Tweeter - simple, single-page Twitter clone.
 
 A simple single-page AJAX based Twitter clone that uses JQuery, HTML5 and CSS along with some dependencies.
 
 ## Screenshots
 
-Starting page on large screen.
+Home page on large screen.
 !["Screenshot of starting page"](https://github.com/OlgaShilenkova/tweeter-copy/blob/master/docs/starting-page.png)
 
 Single tweet with charachters counter.
 !["Screenshot of one tweet"](https://github.com/OlgaShilenkova/tweeter-copy/blob/master/docs/tweet-box.png)
 
 Long tweet error message.
-!["Long tweet error"](docs/tweet-too-long.png))
-
-Long tweet error message.
-!["Long tweet error"](docs/long-tweet.png))
+!["Long tweet error"](https://github.com/OlgaShilenkova/tweeter-copy/blob/master/docs/long-tweet.png?raw=true))
 
 Empty tweet error message.
-!["Empty tweet error"](docs/empty-tweet.png))
+!["Empty tweet error"](https://github.com/OlgaShilenkova/tweeter-copy/blob/master/docs/empty-tweet.png?raw=true))
 
 ## Getting Started
 
